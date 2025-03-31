@@ -5,7 +5,7 @@ list = []
 
 def pedir_cadena():
     cadenas = input("Ingrese la cadena: ")
-    subcadenas = cadenas.strip().split()
+    subcadenas = cadenas.split(",")
     list.extend(subcadenas)  
 
 
