@@ -2,18 +2,37 @@
 veces aparece un carácter específico en cada cadena. Al final, muestra el 
 conteo para cada cadena."""
 
-list_cadenas = ["Holo", "mo llomo", "carlos", "estudio ingenieria en sistemas"]
-print(list_cadenas)
+list = []
 
-caracter_contar = "o"
+def pedir_cadena():
+    cadena = input("Ingrese la cadena para contar los caracteres: ")
+    cadena_separada = cadena.split(",")
+    list.extend(cadena_separada)
 
-def contar_caracter(lista, caracter):
+caracter_especifico = "o"
+
+def contar_caracteres(lista, caracter):
     new_list = []
-    for cadena in lista:
-        conteo = cadena.count(caracter)
-        new_list.append(conteo)
+    for string in lista:
+        result = string.count(caracter)
+        new_list.append(result)
     return new_list
 
-resultado = contar_caracter(list_cadenas, caracter_contar)
+pedir_cadena()
+resultado = contar_caracteres(list, caracter_especifico)
+print(resultado)
 
-print(f"La cantidad de veces que aparece {caracter_contar} en cada cadena es: {resultado}")
+while True:
+    list.clear()
+    option = input("Desea ingresa otra cadena: (s/n = >)").lower()
+    if option == "s":
+        pedir_cadena()
+        resultado = contar_caracteres(list, caracter_especifico)
+        print(resultado)
+    elif option == "n":
+        print("Nos vemos")
+        break
+
+
+
+
