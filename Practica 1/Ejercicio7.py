@@ -10,18 +10,23 @@ def insertar_texto():
 
 delimitador_espeficio = input("Ingrese el delimitador especifico: ")
 
-def agregar_delimitador(lista, caracter):
+def agregar_delimitador(lista):
    new_list = []
    for cadena in lista:
-      convertida = cadena.split(caracter)
+      convertida = cadena.split()
       new_list.append(convertida)
-   return new_list
+   return new_list 
 
+
+
+insertar_texto()
+resultado = agregar_delimitador(list)
+print(f"La cadena separada con un delimitador especifico es: {resultado}")
 while True:
     opcion = input("Desea ingresar otra cadena de texto: (s/n) => ").strip().lower()
     if opcion == "s":
        insertar_texto()
-       resultado = agregar_delimitador(list, delimitador_espeficio)
+       resultado = agregar_delimitador(list)
        print(f"La cadena separada con un delimitador especifico es: {resultado}")
     elif opcion == "n":
        print("Gracias por usar")
